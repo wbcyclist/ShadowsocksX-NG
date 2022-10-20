@@ -13,7 +13,7 @@
 # v2ray-plugin_darwin_universal: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64]
 # v2ray-plugin_darwin_universal (for architecture x86_64):        Mach-O 64-bit executable x86_64
 # v2ray-plugin_darwin_universal (for architecture arm64): Mach-O 64-bit executable arm64
-VERSION="v1.3.1-9-gddd7ab4"
+VERSION="v1.3.2"
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
