@@ -86,6 +86,7 @@
 		9BEEF0751D04EF3E00FC52B3 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEEF0731D04EF3E00FC52B3 /* PreferencesWindowController.swift */; };
 		9BEEF0781D04FE8A00FC52B3 /* LaunchAgentUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEEF0771D04FE8A00FC52B3 /* LaunchAgentUtils.swift */; };
 		B5A2AB04221A72EC003F77B7 /* install_v2ray_plugin.sh in Resources */ = {isa = PBXBuildFile; fileRef = B5A2AB02221A72EC003F77B7 /* install_v2ray_plugin.sh */; };
+		B6B90E6ABAB6B5F6739A673D /* Pods_ShadowsocksX_NG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283ED1A8E9B711AC65670031 /* Pods_ShadowsocksX_NG.framework */; };
 		C6D429931DA75988002A5711 /* install_privoxy.sh in Resources */ = {isa = PBXBuildFile; fileRef = C6D4298E1DA75988002A5711 /* install_privoxy.sh */; };
 		C6D429941DA75988002A5711 /* privoxy in Resources */ = {isa = PBXBuildFile; fileRef = C6D4298F1DA75988002A5711 /* privoxy */; };
 		C6D429961DA75988002A5711 /* start_privoxy.sh in Resources */ = {isa = PBXBuildFile; fileRef = C6D429911DA75988002A5711 /* start_privoxy.sh */; };
@@ -93,6 +94,7 @@
 		C6D429991DA76FBC002A5711 /* privoxy.template.config in Resources */ = {isa = PBXBuildFile; fileRef = C6D429981DA76FBC002A5711 /* privoxy.template.config */; };
 		C8E42A6C1D4F270A0074C7EA /* UserRulesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E42A6A1D4F270A0074C7EA /* UserRulesController.swift */; };
 		C8E42A6E1D4F2CAF0074C7EA /* UserRulesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E42A701D4F2CAF0074C7EA /* UserRulesController.xib */; };
+		D68300841A441554A6F5A084 /* Pods_ShadowsocksX_NGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388120F062D7EB7DD0D8DDCA /* Pods_ShadowsocksX_NGTests.framework */; };
 		F0809FF1595BE2966343D3C7 /* libPods-proxy_conf_helper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7783AEDB4A3BDDC9FF16AC /* libPods-proxy_conf_helper.a */; };
 /* End PBXBuildFile section */
 
@@ -271,6 +273,7 @@
 			files = (
 				9B6BF9541E27B2570061B9A7 /* ServiceManagement.framework in Frameworks */,
 				9B3FFF3E1D08D9910019A709 /* SystemConfiguration.framework in Frameworks */,
+				B6B90E6ABAB6B5F6739A673D /* Pods_ShadowsocksX_NG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +289,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68300841A441554A6F5A084 /* Pods_ShadowsocksX_NGTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +580,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B5DD7B42683A354005EFEF7 /* Build configuration list for PBXNativeTarget "ShadowsocksX-NGTests" */;
 			buildPhases = (
+				D840E5ED7E1AE31377246D94 /* [CP] Check Pods Manifest.lock */,
 				9B5DD7A92683A354005EFEF7 /* Sources */,
 				9B5DD7AA2683A354005EFEF7 /* Frameworks */,
 				9B5DD7AB2683A354005EFEF7 /* Resources */,
@@ -787,6 +792,28 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ShadowsocksX-NG-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D840E5ED7E1AE31377246D94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShadowsocksX-NGTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1129,6 +1156,7 @@
 		};
 		9B5DD7B52683A354005EFEF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B6203C1228FCD3D365814AC /* Pods-ShadowsocksX-NGTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1158,6 +1186,7 @@
 		};
 		9B5DD7B62683A354005EFEF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC7CD9886196A997D6FC78D /* Pods-ShadowsocksX-NGTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
