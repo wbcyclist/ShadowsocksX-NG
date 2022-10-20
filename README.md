@@ -33,7 +33,7 @@ From [here](https://github.com/shadowsocks/ShadowsocksX-NG/releases/)
 
 ## Features
 
-- `ss-local` from shadowsocks-libev 3.2.5.
+- `ss-local` from shadowsocks-libev 3.3.5.
 - Support SIP003 plugins. Embed `kcptun`,  `simple-obfs` and `v2ray-plugin`.
 - Could update PAC by download GFW List from GitHub.
 - Share your server profiles by qrcode or url.
