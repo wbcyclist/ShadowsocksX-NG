@@ -10,7 +10,7 @@
 # We use an adatper to handle it.
 # https://github.com/xtaci/kcptun/releases
 
-VERSION="v20190905_1"
+VERSION="v20221015"
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
