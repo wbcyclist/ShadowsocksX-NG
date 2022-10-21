@@ -26,15 +26,15 @@ cp -f libev.4.dylib "$TargetDir"
 
 # 2.28.1 https://ghcr.io/v2/homebrew/core/mbedtls/2/
 cp -f libmbedcrypto.2.dylib "$TargetDir"
-ln -sfh  "$TargetDir/libmbedcrypto.2.dylib" "$TargetDir/libmbedcrypto.2.dylib"
 ln -sfh  "$TargetDir/libmbedcrypto.2.dylib" "$TargetDir/libmbedcrypto.3.dylib"
+ln -sfh  "$TargetDir/libmbedcrypto.2.dylib" "$TargetDir/libmbedcrypto.7.dylib"
 
 # 8.45 https://ghcr.io/v2/homebrew/core/pcre/
 cp -f libpcre.1.dylib "$TargetDir"
 
 # 1.0.18_1 https://ghcr.io/v2/homebrew/core/libsodium/
-cp -f libsodium.dylib "$TargetDir"
-ln -sfh "$TargetDir/libsodium.dylib" "$TargetDir/libsodium.dylib"
+cp -f libsodium.23.dylib "$TargetDir"
+ln -sfh "$TargetDir/libsodium.23.dylib" "$TargetDir/libsodium.dylib"
 
 #cp -f libudns.0.dylib "$TargetDir"
 
