@@ -9,10 +9,22 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-privoxyVersion=3.0.26.static
-mkdir -p "$HOME/Library/Application Support/ShadowsocksX-NG/privoxy-$privoxyVersion"
-cp -f privoxy "$HOME/Library/Application Support/ShadowsocksX-NG/privoxy-$privoxyVersion/"
+# 3.0.33 https://ghcr.io/v2/homebrew/core/privoxy/
+privoxyVersion=3.0.33
+targetDir="$HOME/Library/Application Support/ShadowsocksX-NG/privoxy-$privoxyVersion"
+latestDir="$HOME/Library/Application Support/ShadowsocksX-NG/privoxy-latest"
+
+mkdir -p "$targetDir"
+cp -f privoxy "$targetDir"
+
+# libpcreposix 8.45 https://ghcr.io/v2/homebrew/core/pcre/
+cp -f libpcreposix.0.dylib "$targetDir"
+ln -sfh "$targetDir/libpcreposix.0.dylib" "$targetDir/libpcreposix.dylib"
+
+rm -f "$latestDir"
+ln -s "$targetDir" "$latestDir"
+
 rm -f "$HOME/Library/Application Support/ShadowsocksX-NG/privoxy"
-ln -s "$HOME/Library/Application Support/ShadowsocksX-NG/privoxy-$privoxyVersion/privoxy" "$HOME/Library/Application Support/ShadowsocksX-NG/privoxy"
+ln -s "$targetDir/privoxy" "$HOME/Library/Application Support/ShadowsocksX-NG/privoxy"
 
 echo done

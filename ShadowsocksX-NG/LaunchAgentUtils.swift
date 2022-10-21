@@ -11,7 +11,7 @@ import Foundation
 let SS_LOCAL_VERSION = "3.3.5"
 let KCPTUN_CLIENT_VERSION = "v20221015"
 let V2RAY_PLUGIN_VERSION = "v1.3.2"
-let PRIVOXY_VERSION = "3.0.26.static"
+let PRIVOXY_VERSION = "3.0.33"
 let SIMPLE_OBFS_VERSION = "0.0.5_1"
 let APP_SUPPORT_DIR = "/Library/Application Support/ShadowsocksX-NG/"
 let USER_CONFIG_DIR = "/.ShadowsocksX-NG/"
@@ -278,13 +278,19 @@ func generatePrivoxyLauchAgentPlist() -> Bool {
     
     let arguments = [privoxyPath, "--no-daemon", "privoxy.config"]
     
+    let dyld_library_paths = [
+        NSHomeDirectory() + APP_SUPPORT_DIR + "ss-local-latest/",
+        NSHomeDirectory() + APP_SUPPORT_DIR + "privoxy-latest/",
+        ]
+    
     // For a complete listing of the keys, see the launchd.plist manual page.
     let dict: NSMutableDictionary = [
         "Label": "com.qiuyuzhou.shadowsocksX-NG.http",
         "WorkingDirectory": NSHomeDirectory() + APP_SUPPORT_DIR,
         "StandardOutPath": logFilePath,
         "StandardErrorPath": logFilePath,
-        "ProgramArguments": arguments
+        "ProgramArguments": arguments,
+        "EnvironmentVariables": ["DYLD_LIBRARY_PATH": dyld_library_paths.joined(separator: ":")]
     ]
     dict.write(toFile: plistFilepath, atomically: true)
     let Sha1Sum = getFileSHA1Sum(plistFilepath)
